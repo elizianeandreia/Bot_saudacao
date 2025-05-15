@@ -1,0 +1,102 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: #0f0f1b;
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.chat-container {
+  background: #1a1a2e;
+  border: 2px solid #00f2ff;
+  border-radius: 12px;
+  box-shadow: 0 0 25px #00f2ff;
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  overflow: hidden;
+}
+
+.chat-box {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom, #1a1a2e, #16213e);
+}
+
+.chat-box .message {
+  margin-bottom: 12px;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.bot {
+  align-self: flex-start;
+  background-color: rgba(0, 242, 255, 0.15);
+  color: #00f2ff;
+  padding: 12px 16px;
+  border-radius: 18px 18px 18px 0;
+  max-width: 80%;
+  border: 1px solid #00f2ff;
+}
+
+.user {
+  align-self: flex-end;
+  background-color: rgba(144, 238, 144, 0.1);
+  color: #90ee90;
+  padding: 12px 16px;
+  border-radius: 18px 18px 0 18px;
+  max-width: 80%;
+  border: 1px solid #90ee90;
+}
+
+.input-area {
+  display: flex;
+  border-top: 1px solid #00f2ff33;
+  padding: 12px;
+  background-color: #0f0f1b;
+}
+
+#userInput {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #00f2ff;
+  background-color: #1a1a2e;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+}
+
+button {
+  padding: 10px 16px;
+  background-color: #00f2ff;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #0ff;
+  box-shadow: 0 0 10px #00f2ff, 0 0 20px #00f2ff;
+}
+
+button:disabled {
+  background-color: #333;
+  color: #999;
+  cursor: not-allowed;
+}
