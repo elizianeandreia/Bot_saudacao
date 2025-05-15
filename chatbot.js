@@ -73,7 +73,7 @@ function processarResposta(resposta) {
       etapa++;
       break;
     default:
-      mostrarMensagem("Já terminamos nosso papo por agora. 😊");
+      mostrarMensagem("Encerramos por agora, mas estou por aqui se precisar😊!");
   }
 }
 
