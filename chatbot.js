@@ -48,11 +48,27 @@ function processarResposta(resposta) {
       etapa++;
       break;
     case 4:
-      respostas.idade = resposta;
-      mostrarMensagem(`Você tem ${respostas.idade} anos! Está jovem ainda!`);
-      mostrarMensagem("Agora, me diga, qual é a sua cor favorita?");
-      etapa++;
-      break;
+     case 4:
+  respostas.idade = resposta;
+  const idade = parseInt(resposta);
+  if (!isNaN(idade)) {
+    if (idade > 110) {
+      mostrarMensagem(`Você tem ${idade} anos? Isso é humanamente impossível! 😲`);
+    } else if (idade <= 30) {
+      mostrarMensagem(`Você tem ${idade} anos! Está jovem ainda!`);
+    } else if (idade <= 50) {
+      mostrarMensagem(`Você tem ${idade} anos! É agora que a vida começa!`);
+    } else {
+      mostrarMensagem(`Você tem ${idade} anos! Você é uma pessoa muito sábia!`);
+    }
+  } else {
+    mostrarMensagem("Hmmm, isso não parece uma idade válida. Pode digitar só o número?");
+    return; 
+  }
+  mostrarMensagem("Agora, me diga, qual é a sua cor favorita?");
+  etapa++;
+  break;
+
     case 5:
       respostas.cor = resposta;
       mostrarMensagem(`A sua cor favorita é ${respostas.cor}! Que cor linda🤩!`);
@@ -73,7 +89,7 @@ function processarResposta(resposta) {
       etapa++;
       break;
     default:
-      mostrarMensagem("Já terminamos nosso papo por agora. 😊");
+      mostrarMensagem("Encerramos por agora, mas estou por aqui se precisar😊!");
   }
 }
 
