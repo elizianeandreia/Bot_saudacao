@@ -35,7 +35,7 @@ function processarResposta(resposta) {
     case 0:
       respostas.nome = resposta;
       mostrarMensagem(`Olá, ${respostas.nome}!`);
-      mostrarMensagem(`Meu nome é Robozinho da Lizi! Mas você pode me chamar de Robozinho🤖!`);
+      mostrarMensagem(`Meu nome é Mr.Robô! Mas você pode me chamar de R5🤖!`);
       mostrarMensagem("Quantos anos você tem?");
       etapa++;
       break;
@@ -43,7 +43,7 @@ function processarResposta(resposta) {
     case 3:
       respostas.nome = resposta;
       mostrarMensagem(`Olá, ${respostas.nome}!`);
-      mostrarMensagem(`Meu nome é Robozinho da Lizi! Mas você pode me chamar de Robozinho🤖!` );
+      mostrarMensagem(`Meu nome é Mr.Robô! Mas você pode me chamar de R5🤖!` );
       mostrarMensagem("Quantos anos você tem?");
       etapa++;
       break;
