@@ -1,21 +1,28 @@
-
+```css
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+:root { --space: 12px; --radius: 12px; }
 
 body {
   font-family: 'Orbitron', sans-serif;
   background: #0f0f1b;
   margin: 0;
   display: flex;
-  height: 100vh;
+  min-height: 100dvh;
   justify-content: center;
   align-items: center;
   color: #fff;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-size: clamp(14px, 1.6vw, 16px);
 }
 
 .chat-container {
   background: #1a1a2e;
   border: 2px solid #00f2ff;
-  border-radius: 12px;
+  border-radius: var(--radius);
   box-shadow: 0 0 25px #00f2ff;
   width: 90%;
   max-width: 500px;
@@ -23,6 +30,7 @@ body {
   flex-direction: column;
   height: 600px;
   overflow: hidden;
+  min-height: 0;
 }
 
 .chat-box {
@@ -32,6 +40,8 @@ body {
   display: flex;
   flex-direction: column;
   background: linear-gradient(to bottom, #1a1a2e, #16213e);
+  -webkit-overflow-scrolling: touch;
+  min-height: 0;
 }
 
 .chat-box .message {
@@ -65,11 +75,13 @@ body {
   border-top: 1px solid #00f2ff33;
   padding: 12px;
   background-color: #0f0f1b;
+  gap: var(--space);
+  padding-bottom: calc(12px + env(safe-area-inset-bottom));
 }
 
 #userInput {
   flex: 1;
-  padding: 10px;
+  padding: 10px 12px;
   border-radius: 8px;
   border: 1px solid #00f2ff;
   background-color: #1a1a2e;
@@ -88,6 +100,9 @@ button {
   font-weight: bold;
   font-family: 'Orbitron', sans-serif;
   transition: all 0.3s ease;
+  min-height: 44px;
+  min-width: 44px;
+  touch-action: manipulation;
 }
 
 button:hover {
@@ -100,3 +115,43 @@ button:disabled {
   color: #999;
   cursor: not-allowed;
 }
+
+@media (max-width: 600px) {
+  body { align-items: stretch; }
+  .chat-container {
+    width: 100vw;
+    max-width: none;
+    height: 100dvh;
+    border-radius: 0;
+  }
+  .chat-box { padding: 16px; }
+  .chat-box .message { font-size: 0.95rem; }
+  .bot, .user { max-width: 88%; }
+  #userInput { font-size: 16px; }
+  button { padding: 12px 16px; }
+}
+
+@media (max-width: 380px) {
+  :root { --space: 10px; }
+  .chat-box { padding: 12px; }
+  .chat-box .message { margin-bottom: 10px; }
+  .bot, .user { padding: 10px 12px; border-radius: 16px; }
+  .input-area { padding: 10px; }
+  button { padding: 10px 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+@media (max-width: 600px) {
+  body { align-items: stretch; }
+  .chat-container {
+    width: 100vw;
+    max-width: none;
+    height: 100dvh;
+    border-radius: 0;
+  }
+}
+
+
