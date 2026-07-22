@@ -1,19 +1,145 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta charset="UTF-8">
-  <title>Chatbot - Simulador de Conversa </title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+  <meta
+    name="description"
+    content="Simulador de atendimento virtual desenvolvido pela LTHS Tecnologia"
+  >
+  <title>R5 Chat | Assistente Virtual</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
   <link rel="stylesheet" href="estilo.css">
 </head>
+
 <body>
-  <div class="chat-container">
-    <div id="chat" class="chat-box"></div>
-    <div class="input-area">
-      <input type="text" id="userInput" placeholder="Digite sua resposta..." />
-      <button onclick="enviarResposta()">Enviar</button>
-    </div>
-  </div>
+  <main class="chat-app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">R5</div>
+
+        <div class="brand-content">
+          <strong>R5 Chat</strong>
+          <span>Painel de atendimento</span>
+        </div>
+      </div>
+
+      <div class="sidebar-label">Conversas</div>
+
+      <button class="conversation-item active" type="button">
+        <div class="conversation-avatar">R5</div>
+
+        <div class="conversation-info">
+          <div class="conversation-name">
+            <strong>Assistente R5</strong>
+            <span>Agora</span>
+          </div>
+
+          <p>Conversa em andamento</p>
+        </div>
+      </button>
+
+      <section class="assistant-card">
+        <div class="assistant-card-icon">🤖</div>
+
+        <div>
+          <strong>Atendimento automático</strong>
+          <p>Assistente virtual disponível para conversar com você.</p>
+        </div>
+      </section>
+
+      <div class="sidebar-footer">
+        <span>Desenvolvido por</span>
+        <strong>LTHS Tecnologia</strong>
+      </div>
+    </aside>
+
+    <section class="chat-panel">
+      <header class="chat-header">
+        <div class="profile">
+          <div class="profile-avatar">
+            R5
+            <span class="status-indicator"></span>
+          </div>
+
+          <div class="profile-info">
+            <h1>Assistente R5</h1>
+
+            <div class="status">
+              <span class="status-dot"></span>
+              Online agora
+            </div>
+          </div>
+        </div>
+
+        <button
+          id="resetButton"
+          class="reset-button"
+          type="button"
+          aria-label="Reiniciar conversa"
+          title="Reiniciar conversa"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M4 4v6h6M20 20v-6h-6M5.6 15A7 7 0 0 0 18 17M18.4 9A7 7 0 0 0 6 7"
+            />
+          </svg>
+
+          <span>Reiniciar</span>
+        </button>
+      </header>
+
+      <div
+        id="chat"
+        class="chat-box"
+        role="log"
+        aria-live="polite"
+        aria-label="Mensagens da conversa"
+      ></div>
+
+      <footer class="composer">
+        <form id="chatForm" class="input-area">
+          <label class="sr-only" for="userInput">
+            Digite sua mensagem
+          </label>
+
+          <input
+            type="text"
+            id="userInput"
+            placeholder="Digite sua mensagem..."
+            autocomplete="off"
+            maxlength="150"
+          >
+
+          <button
+            id="sendButton"
+            class="send-button"
+            type="submit"
+            aria-label="Enviar mensagem"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M22 2 11 13"></path>
+              <path d="m22 2-7 20-4-9-9-4Z"></path>
+            </svg>
+          </button>
+        </form>
+
+        <p class="composer-hint">
+          Pressione <strong>Enter</strong> para enviar
+        </p>
+      </footer>
+    </section>
+  </main>
 
   <script src="chatbot.js"></script>
 </body>
